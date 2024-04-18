@@ -2802,7 +2802,7 @@ bool WaveTrack::HandleXMLTag(const std::string_view& tag, const AttributesList &
          {
             // mRate is an int, but "rate" in the project file is a float.
             if (!value.TryGet(dblValue) ||
-                  (dblValue < 1.0) || (dblValue > 1000000.0)) // allow a large range to be read
+                  (dblValue < 1.0) || (dblValue > 40000000.0)) // allow a large range to be read
                return false;
 
             // Defer the setting of rate until LinkConsistencyFix
