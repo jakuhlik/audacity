@@ -47,7 +47,7 @@ SetProjectCommand::SetProjectCommand()
 template<bool Const>
 bool SetProjectCommand::VisitSettings( SettingsVisitorBase<Const> & S ){
    S.OptionalN( bHasName        ).Define(     mName,        wxT("Name"),       _("Project") );
-   S.OptionalN( bHasRate        ).Define(     mRate,        wxT("Rate"),       44100.0, 1.0, 1000000.0);
+   S.OptionalN( bHasRate        ).Define(     mRate,        wxT("Rate"),       44100.0, 1.0, 40000000.0);
    S.OptionalY( bHasSizing      ).Define(     mPosX,        wxT("X"),          10, 0, 2000);
    S.OptionalY( bHasSizing      ).Define(     mPosY,        wxT("Y"),          10, 0, 2000);
    S.OptionalY( bHasSizing      ).Define(     mWidth,       wxT("Width"),      1000, 200, 4000);
@@ -89,7 +89,7 @@ bool SetProjectCommand::Apply(const CommandContext & context)
    if( bHasName )
       window.SetLabel(mName);
 
-   if (bHasRate && mRate >= 1 && mRate <= 1000000)
+   if (bHasRate && mRate >= 1 && mRate <= 40000000)
       ProjectRate::Get(project).SetRate(mRate);
 
    if( bHasSizing )
