@@ -476,7 +476,7 @@ void RateMenuTable::OnRateOther(wxCommandEvent &)
       }
 
       long lrate;
-      if (cb->GetValue().ToLong(&lrate) && lrate >= 1 && lrate <= 1000000)
+      if (cb->GetValue().ToLong(&lrate) && lrate >= 1 && lrate <= 40000000)
       {
          newRate = (int)lrate;
          break;
