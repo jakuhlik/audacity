@@ -458,8 +458,8 @@ void ImportRawDialog::OnOK(wxCommandEvent & WXUNUSED(event))
    if (mRate < 100.0)
       mRate = 100.0;
    // Highest preset sample rate supported in Audacity 2.3.0 is 384 kHz
-   if (mRate > 384000.0)
-      mRate = 384000.0;
+   //if (mRate > 384000.0)
+   //   mRate = 384000.0;
 
    EndModal(true);
 }

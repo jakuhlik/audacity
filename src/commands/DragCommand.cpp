@@ -63,10 +63,10 @@ template<bool Const>
 bool DragCommand::VisitSettings( SettingsVisitorBase<Const> & S ){
    S.OptionalN( bHasId         ).Define(     mId,          wxT("Id"),         11000, -100000, 1000000);
    S.OptionalY( bHasWinName    ).Define(     mWinName,     wxT("Window"),     wxString{"Timeline"});
-   S.OptionalY( bHasFromX      ).Define(     mFromX,       wxT("FromX"),      200.0, 0.0, 1000000.0);
-   S.OptionalY( bHasFromY      ).Define(     mFromY,       wxT("FromY"),      10.0,  0.0, 1000000.0);
-   S.OptionalN( bHasToX        ).Define(     mToX,         wxT("ToX"),        400.0, 0.0, 1000000.0);
-   S.OptionalN( bHasToY        ).Define(     mToY,         wxT("ToY"),        10.0,  0.0, 1000000.0);
+   S.OptionalY( bHasFromX      ).Define(     mFromX,       wxT("FromX"),      200.0, 0.0, 40000000.0);
+   S.OptionalY( bHasFromY      ).Define(     mFromY,       wxT("FromY"),      10.0,  0.0, 40000000.0);
+   S.OptionalN( bHasToX        ).Define(     mToX,         wxT("ToX"),        400.0, 0.0, 40000000.0);
+   S.OptionalN( bHasToY        ).Define(     mToY,         wxT("ToY"),        10.0,  0.0, 40000000.0);
    S.OptionalN( bHasRelativeTo ).DefineEnum( mRelativeTo,  wxT("RelativeTo"), kPanel, kCoordTypeStrings, nCoordTypes );
    return true;
 };

@@ -641,7 +641,7 @@ void OnResample(const CommandContext &context)
          return;  // user cancelled dialog
 
       long lrate;
-      if (cb->GetValue().ToLong(&lrate) && lrate >= 1 && lrate <= 1000000) {
+      if (cb->GetValue().ToLong(&lrate) && lrate >= 1 && lrate <= 40000000) {
          newRate = (int)lrate;
          break;
       }
